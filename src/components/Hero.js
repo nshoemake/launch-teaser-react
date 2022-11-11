@@ -1,19 +1,10 @@
-import { useState } from 'react'
-
-export const Hero = ({title, children}) => {
-    const [isActive, setIsActive] = useState(false)
-
+export const Hero = ({content}) => {
+   
     return (
         <div className="m-auto">
-            {isActive ? (
-                <p>
-                    WOOOO
-                </p>
-            ) : (
-                <button onClick={() => setIsActive(true)}>
-                BRAND SHIT
-                </button>
-            )}
+          <h1>
+            {content}
+          </h1>
             
         </div>
     )

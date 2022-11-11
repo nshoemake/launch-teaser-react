@@ -1,25 +1,20 @@
-const Button = ({showTab}) => {
-  function handleClick(type) {
-    alert('hi')
-  }
-  return (
-      <button onClick={handleClick}>
-          {showTab}
-      </button>
-  )
-}
+import { Button } from './Button'
 
-export const Sections = () => {
+export const Sections = ({onClick}) => {
     return (
         <div className="">
             <ul className="inline-grid grid-cols-2 gap-4">
               <li>
                 <Button 
-                  showTab={'about'}/>
+                  text={'about'}
+                  onClick={onClick}
+                  />
               </li>
               <li>
                 <Button 
-                  showTab={'counter'}/>
+                  text={'counter'}
+                  onClick={onClick}
+                  />
               </li>
             </ul>
           </div>
