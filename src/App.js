@@ -6,14 +6,18 @@ import { useState } from 'react'
 
 
 function App() {
-  const [content, setContent] = useState(null)
+  const [content, setContent] = useState('welcome')
   const onClick = () => {
-    
+    if (content === 'welcome') {
+      setContent('more info')
+    } else if (content === 'more info') {
+      setContent('counter')
+    }
     return null
   }
   return (
     <div className="App h-screen flex flex-col justify-between">
-      <Hero content='WOW!' />
+      <Hero content={content} />
       <footer>
         <div className="flex justify-between m-8">
           <Sections onClick={onClick} />
