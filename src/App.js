@@ -7,13 +7,24 @@ import { useState } from 'react'
 
 function App() {
   const [content, setContent] = useState('welcome')
-  const onClick = () => {
+  const onClick = ({ text }) => {
     if (content === 'welcome') {
       setContent('more info')
     } else if (content === 'more info') {
       setContent('counter')
     }
     return null
+    // switch (text) {
+    //   case 'about':
+    //     setContent('this is some about info')
+    //   break;
+    //   case 'counter':
+    //     setContent('here is a counter')
+    //   break;
+    //   default:
+    //   throw new Error('Unimplemented type');
+    // }
+
   }
   return (
     <div className="App h-screen flex flex-col justify-between">
