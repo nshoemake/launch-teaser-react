@@ -3,16 +3,16 @@ export const Socials = () => {
         <div>
             <ul className="inline-grid grid-cols-4 gap-4">
               <li>
-                social 1
+                <a href="#">youtube</a>
               </li>
               <li>
-                social 2
+                <a href="#">instagram</a>
               </li>
               <li>
-                social 3
+                <a href="#">tiktok</a>
               </li>
               <li>
-                social 4
+                <a href="#">stuff</a>
               </li>
             </ul>
           </div>

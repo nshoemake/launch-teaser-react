@@ -7,13 +7,17 @@ export const Sections = ({onClick}) => {
               <li>
                 <Button 
                   text={'about'}
-                  onClick={onClick}
+                  onClick={() => {
+                    onClick('hello world', false)
+                  }}
                   />
               </li>
               <li>
                 <Button 
                   text={'counter'}
-                  onClick={onClick}
+                  onClick={() => {
+                    onClick(null, true)
+                  }}
                   />
               </li>
             </ul>

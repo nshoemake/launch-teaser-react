@@ -1,34 +1,44 @@
 import './App.css';
-import { Sections } from './components/Sections'
 import { Socials } from './components/Socials'
+import { Sections } from './components/Sections'
 import { Hero } from './components/Hero'
-import { useState } from 'react'
-
+import { CountdownTimer } from './components/Countdown'
+import { useState, useEffect } from 'react'
 
 function App() {
   const [content, setContent] = useState('welcome')
-  const onClick = ({ text }) => {
-    if (content === 'welcome') {
-      setContent('more info')
-    } else if (content === 'more info') {
-      setContent('counter')
+  const [hidden, setHidden] = useState(false)
+  const [count, setCount] = useState(0)
+  const onClick = (heroText, showCounter) => {
+    if (showCounter) {
+      (() => {
+        setHidden(true)
+      })()
+    } else {
+      (() => {
+        setHidden(false)
+      })()
+      setContent(heroText)
     }
-    return null
-    // switch (text) {
-    //   case 'about':
-    //     setContent('this is some about info')
-    //   break;
-    //   case 'counter':
-    //     setContent('here is a counter')
-    //   break;
-    //   default:
-    //   throw new Error('Unimplemented type');
-    // }
-
+    
+      // setHidden(false)
+      // setContent('welcome')
+    
   }
+
+  const THREE_DAYS_IN_MS = 3 * 24 * 60 * 60 * 1000;
+  const NOW_IN_MS = new Date().getTime();
+
+  const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
+  
   return (
     <div className="App h-screen flex flex-col justify-between">
-      <Hero content={content} />
+      {!hidden ? 
+      <Hero content={content} /> 
+      : 
+      <CountdownTimer targetDate={dateTimeAfterThreeDays} />
+      }
+      
       <footer>
         <div className="flex justify-between m-8">
           <Sections onClick={onClick} />
