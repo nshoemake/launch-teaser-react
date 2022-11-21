@@ -8,8 +8,8 @@ import { useState, useEffect } from 'react'
 function App() {
   const [content, setContent] = useState('welcome')
   const [hidden, setHidden] = useState(false)
-  const [count, setCount] = useState(0)
   const onClick = (heroText, showCounter) => {
+    
     if (showCounter) {
       (() => {
         setHidden(true)
@@ -21,10 +21,17 @@ function App() {
       setContent(heroText)
     }
     
-      // setHidden(false)
-      // setContent('welcome')
-    
   }
+  
+  useEffect(() => {
+    const id = setTimeout(() => {
+      setHidden(false)
+      setContent('welcome')
+    }, 15000)
+    return () => {
+      clearInterval(id)
+    }
+  }, [hidden, content])
 
   const THREE_DAYS_IN_MS = 3 * 24 * 60 * 60 * 1000;
   const NOW_IN_MS = new Date().getTime();
