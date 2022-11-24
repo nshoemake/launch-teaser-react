@@ -6,9 +6,9 @@ export const Sections = ({onClick}) => {
             <ul className="inline-grid grid-cols-2 gap-4">
               <li>
                 <Button 
-                  text={'about'}
+                  text={'more'}
                   onClick={() => {
-                    onClick('hello world', false)
+                    onClick('information about the anticpated product launch', false)
                   }}
                   />
               </li>

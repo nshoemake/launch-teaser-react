@@ -12,7 +12,7 @@ const ExpiredNotice = () => {
 
 const ShowCounter = ({days, hours, minutes, seconds}) => {
     return (
-        <div className="m-auto inline-grid grid-cols-4 gap-4">
+        <div className="m-auto md:inline-grid md:grid-cols-4 md:gap-4 text-3xl">
             <DateTimeDisplay 
                 value={days} 
                 type={'Days'}

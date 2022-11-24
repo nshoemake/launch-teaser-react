@@ -6,7 +6,7 @@ import { CountdownTimer } from './components/Countdown'
 import { useState, useEffect } from 'react'
 
 function App() {
-  const [content, setContent] = useState('welcome')
+  const [content, setContent] = useState(<img className="w-72" src="nshoemake-logo.png" alt="logo" />)
   const [hidden, setHidden] = useState(false)
   const onClick = (heroText, showCounter) => {
     
@@ -26,7 +26,7 @@ function App() {
   useEffect(() => {
     const id = setTimeout(() => {
       setHidden(false)
-      setContent('welcome')
+      setContent(<img className="w-72" src="nshoemake-logo.png" alt="logo" />)
     }, 15000)
     return () => {
       clearInterval(id)
@@ -39,7 +39,7 @@ function App() {
   const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
   
   return (
-    <div className="App h-screen flex flex-col justify-between">
+    <div className="App h-screen flex flex-col justify-between bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">
       {!hidden ? 
       <Hero content={content} /> 
       : 
