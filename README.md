@@ -5,7 +5,7 @@ The application is a simple react build that utilized useState and useEffect.
 
 **Link to project:** https://launch-teaser-react.netlify.app/
 
-![alt tag](https://user-images.githubusercontent.com/90182862/192789020-942398f4-da45-4c55-9e0f-ebc2c7b13781.png)
+![alt tag](https://github.com/nshoemake/launch-teaser-react/blob/main/launch-teaser-300x.gif)
 
 ## How It's Made:
 
